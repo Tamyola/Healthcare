@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { StaffModel } = require('../models/staff');
 const { PatientModel } = require('../models/patient');
 
+router.get('/dashboard', (req, res) => {
+    res.render('dash');
+});
+
 router.get('/', async (req, res) => {
     const profile = await StaffModel.find({}).lean().sort({dateCreated: -1});
     res.render('staff', {profile});
@@ -56,6 +60,14 @@ router.post('/create', async (req, res) => {
     }
 });
 
+router.get('/workers', (req, res) => {
+    res.render('staff');
+});
+
+router.get('/wardees', (req, res) => {
+    res.render('patient');
+});
+
 router.post('/update', async (req, res) => {
     const data = await StaffModel.findById(req.body.id)
     if (!data) {
@@ -69,11 +81,6 @@ router.post('/update', async (req, res) => {
 });
 
 //router.post('/delete', staffController.delete)
-
-
-
-
-
 
 router.get('/sickpersons', async (req, res) => {
     const personnel = await PatientModel.find({}).lean().sort({dateCreated: -1});

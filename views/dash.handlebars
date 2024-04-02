@@ -1,0 +1,62 @@
+<head>
+  <title>Dashboard Page</title>
+</head>
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg'); /* Specify your background image path */
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(/images/hosac.jpg);
+}
+
+h1 {
+    margin: 0;
+    font-size: 60px;
+    padding-top: 100px;
+    color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Adjust according to your header height */
+}
+
+.big-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    margin: 10px;
+    border: none;
+    background-color: greenyellow; /* Green background */
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.big-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+</style>
+
+<form id ="dash" method="post" action="dash">
+<header>
+        <h1>WELCOME TO REDDINGTON HOSPITAL</h1>
+    </header>
+    <main>
+        <a href="/workers"><button type="button" class="big-button">STAFF.ID</button></a>
+        <a href="/wardees"><button type="button" class="big-button">PATIENT.ID</button></a>
+    </main>
+    </form>
